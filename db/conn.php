@@ -1,8 +1,16 @@
 <?php
-    $host = 'localhost';
-    $db = 'attendance_db';
-    $user = 'root';
-    $pass = '';
+    // Development connection
+    // $host = 'localhost';
+    // $db = 'attendance_db';
+    // $user = 'root';
+    // $pass = '';
+    // $charset = 'utf8mb4';
+   
+    // Remote Database Connection
+    $host = 'remotemysql.com';
+    $db = 'BLQO9JaxxS';
+    $user = 'BLQO9JaxxS';
+    $pass = 'CwRRxusvoN';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -18,6 +26,10 @@
     }
 
     require_once 'crud.php';
+    require_once 'user.php';
     $crud = new crud($pdo);
+    $user = new user($pdo);
     // require crud down line add function
+    $user->insertUser("admin","password");
+    $user->insertUser("admin2","password");
 ?>

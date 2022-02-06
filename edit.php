@@ -1,6 +1,8 @@
 <?php
     $title = 'Edit Record';
+
     require_once 'includes/header.php';
+    require_once 'includes/auth_check.php';
     require_once 'db/conn.php';
 
     $results = $crud->getSpecialties();
@@ -17,6 +19,7 @@
     
         // { start else and end code } 
 ?>
+
 
     <h1 class="text-center p-3"><span class="text-success">Edit Record</span> </h1>
 <!--Action to Success page -->
